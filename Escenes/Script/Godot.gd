@@ -24,3 +24,12 @@ func _process(delta):
 
 func _on_Personatges_area_entered(area):
 	modulate = Color(1,0,0)
+	if area.is_in_group('Inici'):
+		print(area.name)
+		modulate = Color(1,0,0)
+	elif area.is_in_group('Final'):
+		modulate = Color(0,1,0)
+	$Godot.rotation_degrees += 45
+
+func _on_Personatges_area_exited(area):
+	modulate = Color(1,1,1)
