@@ -18,4 +18,26 @@ func _physics_process(delta):
 
 	velocitat += gravetat * delta
 	velocitat = move_and_slide((velocitat), Vector2.UP)
+	
+	anima(velocitat)
+	
+func anima(velocitat: Vector2):
+	var animacio = $Sprite
+	if velocitat.x > 0:
+		animacio.flip_h  = false
+		animacio.play("camina")
+	elif velocitat.x < 0:
+		animacio.flip_h = true
+		animacio.play("camina")
+	
+	if velocitat.y < -1:
+		animacio.play("salta")
+	elif abs(velocitat.x) < 0.1:
+		animacio.play("default")
+	
+		
 
+
+
+func _on_Final_area_entered(area):
+	get_tree().change_scene("res://Escenes/EscenaCossos/Escena2.tscn")
