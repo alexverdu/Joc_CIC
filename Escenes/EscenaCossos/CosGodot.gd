@@ -2,7 +2,7 @@ extends KinematicBody2D
 
 var velocitat_base = 200
 var velocitat = Vector2.ZERO
-var gravetat = Vector2.DOWN * 980
+var gravetat = Vector2.DOWN * 1200
 var salt = Vector2.UP * 400
 
 func _physics_process(delta):
@@ -34,10 +34,15 @@ func anima(velocitat: Vector2):
 		animacio.play("salta")
 	elif abs(velocitat.x) < 0.1:
 		animacio.play("default")
-	
-		
+			
 
-
-
-func _on_Final_area_entered(area):
+func _on_Final_body_entered(body):
 	get_tree().change_scene("res://Escenes/EscenaCossos/Escena2.tscn")
+
+
+func _on_Limit_body_entered(body):
+	position = Vector2(25, 425)
+
+
+func _on_IniciEscena2_body_entered(body):
+	get_tree().change_scene("res://Escenes/EscenaCossos/EscenaCossos.tscn")

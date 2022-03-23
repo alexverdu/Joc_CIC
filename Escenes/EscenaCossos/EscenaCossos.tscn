@@ -4,176 +4,169 @@
 [ext_resource path="res://Escenes/EscenaCossos/Terra.tscn" type="PackedScene" id=2]
 
 [sub_resource type="RectangleShape2D" id=7]
-extents = Vector2( 20.4688, 18 )
+extents = Vector2( 19.9999, 18.5 )
 
 [sub_resource type="RectangleShape2D" id=8]
-extents = Vector2( 19.7344, 18 )
+extents = Vector2( 20.2342, 18.5 )
 
 [sub_resource type="RectangleShape2D" id=5]
-extents = Vector2( 19.875, 19 )
+extents = Vector2( 20, 19.5 )
 
 [sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 19.875, 20.25 )
 
 [sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 19.875, 17.625 )
-
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 170.167, 10 )
+extents = Vector2( 19.875, 18.125 )
 
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 19, 77.5 )
 
 [sub_resource type="RectangleShape2D" id=9]
-extents = Vector2( 79, 19 )
+extents = Vector2( 97.5, 19.5 )
 
 [sub_resource type="RectangleShape2D" id=11]
-extents = Vector2( 45.5, 238 )
+extents = Vector2( 48, 239 )
 
 [sub_resource type="RectangleShape2D" id=10]
-extents = Vector2( 21, 226.5 )
+extents = Vector2( 20, 221 )
+
+[sub_resource type="RectangleShape2D" id=12]
+extents = Vector2( 494.25, 10 )
 
 [node name="Escena1" type="Node2D"]
 
 [node name="KinematicBody2D" parent="." instance=ExtResource( 1 )]
-position = Vector2( 30, 413 )
+position = Vector2( 27, 403 )
 
 [node name="Camera2D" type="Camera2D" parent="KinematicBody2D"]
 current = true
 
-[node name="Terres" type="Node2D" parent="."]
+[node name="Objectes" type="Node2D" parent="."]
 
-[node name="Cubos" type="Node2D" parent="Terres"]
+[node name="Cubos" type="Node2D" parent="Objectes"]
 
-[node name="Cubo5" type="StaticBody2D" parent="Terres/Cubos"]
+[node name="Cubo5" type="StaticBody2D" parent="Objectes/Cubos"]
 
-[node name="ColorRect" type="ColorRect" parent="Terres/Cubos/Cubo5"]
+[node name="ColorRect" type="ColorRect" parent="Objectes/Cubos/Cubo5"]
 margin_left = 612.0
 margin_top = 335.0
 margin_right = 652.0
 margin_bottom = 372.0
 color = Color( 0.588235, 0.588235, 0.588235, 1 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Terres/Cubos/Cubo5"]
-position = Vector2( 632.469, 354 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Objectes/Cubos/Cubo5"]
+position = Vector2( 632, 353.5 )
 shape = SubResource( 7 )
 
-[node name="Cubo4" type="StaticBody2D" parent="Terres/Cubos"]
+[node name="Cubo4" type="StaticBody2D" parent="Objectes/Cubos"]
 
-[node name="ColorRect" type="ColorRect" parent="Terres/Cubos/Cubo4"]
+[node name="ColorRect" type="ColorRect" parent="Objectes/Cubos/Cubo4"]
 margin_left = 707.0
 margin_top = 323.0
 margin_right = 747.0
 margin_bottom = 360.0
 color = Color( 0.588235, 0.588235, 0.588235, 1 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Terres/Cubos/Cubo4"]
-position = Vector2( 726.266, 341 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Objectes/Cubos/Cubo4"]
+position = Vector2( 726.766, 341.5 )
 shape = SubResource( 8 )
 
-[node name="Cubo3" type="StaticBody2D" parent="Terres/Cubos"]
+[node name="Cubo3" type="StaticBody2D" parent="Objectes/Cubos"]
 
-[node name="ColorRect" type="ColorRect" parent="Terres/Cubos/Cubo3"]
-margin_left = 355.0
-margin_top = 360.0
-margin_right = 395.0
-margin_bottom = 399.0
+[node name="ColorRect" type="ColorRect" parent="Objectes/Cubos/Cubo3"]
+margin_left = 356.0
+margin_top = 353.0
+margin_right = 396.0
+margin_bottom = 392.0
 color = Color( 0.588235, 0.588235, 0.588235, 1 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Terres/Cubos/Cubo3"]
-position = Vector2( 375, 379 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Objectes/Cubos/Cubo3"]
+position = Vector2( 376, 372.5 )
 shape = SubResource( 5 )
 
-[node name="Cubo2" type="StaticBody2D" parent="Terres/Cubos"]
+[node name="Cubo2" type="StaticBody2D" parent="Objectes/Cubos"]
 
-[node name="ColorRect" type="ColorRect" parent="Terres/Cubos/Cubo2"]
+[node name="ColorRect" type="ColorRect" parent="Objectes/Cubos/Cubo2"]
 margin_left = 257.0
 margin_top = 381.0
 margin_right = 297.0
 margin_bottom = 421.0
 color = Color( 0.588235, 0.588235, 0.588235, 1 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Terres/Cubos/Cubo2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Objectes/Cubos/Cubo2"]
 position = Vector2( 277, 401.5 )
 shape = SubResource( 6 )
 
-[node name="Cubo" type="StaticBody2D" parent="Terres/Cubos"]
+[node name="Cubo" type="StaticBody2D" parent="Objectes/Cubos"]
 
-[node name="ColorRect" type="ColorRect" parent="Terres/Cubos/Cubo"]
+[node name="ColorRect" type="ColorRect" parent="Objectes/Cubos/Cubo"]
 margin_left = 171.0
 margin_top = 407.0
 margin_right = 211.0
 margin_bottom = 444.0
 color = Color( 0.588235, 0.588235, 0.588235, 1 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Terres/Cubos/Cubo"]
-position = Vector2( 191.125, 425.625 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Objectes/Cubos/Cubo"]
+position = Vector2( 191.125, 425.125 )
 shape = SubResource( 4 )
 
-[node name="Terres" type="Node2D" parent="Terres"]
+[node name="Terres" type="Node2D" parent="Objectes"]
 
-[node name="Terra2" parent="Terres/Terres" instance=ExtResource( 2 )]
-position = Vector2( 293, 55 )
-
-[node name="ColorRect" parent="Terres/Terres/Terra2" index="0"]
-margin_left = -98.0
-margin_right = 243.0
-color = Color( 0, 0, 0, 1 )
-
-[node name="CollisionShape2D" parent="Terres/Terres/Terra2" index="1"]
-position = Vector2( 72.5, 0 )
-shape = SubResource( 1 )
-
-[node name="Terra" parent="Terres/Terres" instance=ExtResource( 2 )]
+[node name="Terra" parent="Objectes/Terres" instance=ExtResource( 2 )]
 position = Vector2( 304, 474 )
 
-[node name="Columnes" type="Node2D" parent="Terres"]
+[node name="Columnes" type="Node2D" parent="Objectes"]
 
-[node name="Columna" type="StaticBody2D" parent="Terres/Columnes"]
+[node name="Columna" type="StaticBody2D" parent="Objectes/Columnes"]
 
-[node name="ColorRect" type="ColorRect" parent="Terres/Columnes/Columna"]
+[node name="ColorRect" type="ColorRect" parent="Objectes/Columnes/Columna"]
 margin_left = 473.0
 margin_top = 290.0
 margin_right = 513.0
 margin_bottom = 445.0
 color = Color( 0.545098, 0.545098, 0.545098, 1 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Terres/Columnes/Columna"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Objectes/Columnes/Columna"]
 position = Vector2( 493, 367.5 )
 shape = SubResource( 3 )
 
-[node name="Columna2" type="StaticBody2D" parent="Terres/Columnes"]
+[node name="Columna2" type="StaticBody2D" parent="Objectes/Columnes"]
 
-[node name="ColorRect" type="ColorRect" parent="Terres/Columnes/Columna2"]
+[node name="ColorRect" type="ColorRect" parent="Objectes/Columnes/Columna2"]
 margin_left = 788.0
 margin_top = 262.0
-margin_right = 948.0
+margin_right = 983.0
 margin_bottom = 301.0
 color = Color( 0.545098, 0.545098, 0.545098, 1 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Terres/Columnes/Columna2"]
-position = Vector2( 869, 282 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Objectes/Columnes/Columna2"]
+position = Vector2( 885.5, 281.5 )
 shape = SubResource( 9 )
 
-[node name="Columna3" type="StaticBody2D" parent="Terres/Columnes"]
+[node name="Columna3" type="StaticBody2D" parent="Objectes/Columnes"]
 
-[node name="ColorRect" type="ColorRect" parent="Terres/Columnes/Columna3"]
+[node name="ColorRect" type="ColorRect" parent="Objectes/Columnes/Columna3"]
 margin_left = -95.0
 margin_top = 26.0
-margin_right = -1.0
+margin_right = 1.0
 margin_bottom = 506.0
 color = Color( 0.545098, 0.545098, 0.545098, 1 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Terres/Columnes/Columna3"]
-position = Vector2( -47.5, 266 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Objectes/Columnes/Columna3"]
+position = Vector2( -47, 267 )
 shape = SubResource( 11 )
 
 [node name="Final" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Final"]
-position = Vector2( 1004, 309.5 )
+position = Vector2( 1005, 309 )
 shape = SubResource( 10 )
 
-[connection signal="area_entered" from="Final" to="KinematicBody2D" method="_on_Final_area_entered"]
+[node name="Limit" type="Area2D" parent="."]
 
-[editable path="Terres/Terres/Terra2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Limit"]
+position = Vector2( 495.75, 544 )
+shape = SubResource( 12 )
+
+[connection signal="body_entered" from="Final" to="KinematicBody2D" method="_on_Final_body_entered"]
+[connection signal="body_entered" from="Limit" to="KinematicBody2D" method="_on_Limit_body_entered"]

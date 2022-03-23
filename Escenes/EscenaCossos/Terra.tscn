@@ -1,4 +1,6 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Imatges/Tiles/tile_0004.png" type="Texture" id=1]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 101, 10 )
@@ -6,12 +8,11 @@ extents = Vector2( 101, 10 )
 [node name="Terra" type="StaticBody2D"]
 scale = Vector2( 3, 3 )
 
-[node name="ColorRect" type="ColorRect" parent="."]
-margin_left = -101.0
-margin_top = -10.0
-margin_right = 101.0
-margin_bottom = 10.0
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -0.33316, 0 )
 shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( -0.166664, -0.166667 )
+scale = Vector2( 12.6042, 1.22917 )
+texture = ExtResource( 1 )
