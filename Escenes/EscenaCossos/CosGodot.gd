@@ -53,3 +53,4 @@ func _on_Obstacle1_area_entered(area):
 
 func _on_Obstacle1_body_entered(body):
 	position = Vector2(25,425)
+
