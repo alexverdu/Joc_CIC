@@ -23,10 +23,10 @@ func _physics_process(delta):
 	
 func anima(velocitat: Vector2):
 	var animacio = $Sprite
-	if velocitat.x > 0:
+	if velocitat.x > 0.5:
 		animacio.flip_h  = false
 		animacio.play("camina")
-	elif velocitat.x < 0:
+	elif velocitat.x < 0.5:
 		animacio.flip_h = true
 		animacio.play("camina")
 	
@@ -46,3 +46,10 @@ func _on_Limit_body_entered(body):
 
 func _on_IniciEscena2_body_entered(body):
 	get_tree().change_scene("res://Escenes/EscenaCossos/EscenaCossos.tscn")
+
+func _on_Obstacle1_area_entered(area):
+	position = Vector2(25,425)
+
+
+func _on_Obstacle1_body_entered(body):
+	position = Vector2(25,425)

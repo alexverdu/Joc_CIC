@@ -1,31 +1,40 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Escenes/EscenaCossos/CosGodot.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Escenes/EscenaCossos/Terra.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Imatges/Tiles/tile_0001.png" type="Texture" id=3]
+[ext_resource path="res://Imatges/Tiles/tile_0000.png" type="Texture" id=4]
+[ext_resource path="res://Imatges/Tiles/tile_0002.png" type="Texture" id=5]
+[ext_resource path="res://Imatges/Tiles/tile_0021.png" type="Texture" id=6]
+[ext_resource path="res://Imatges/Tiles/tile_0020.png" type="Texture" id=7]
+[ext_resource path="res://Imatges/Tiles/spikes.png" type="Texture" id=8]
 
 [sub_resource type="RectangleShape2D" id=7]
-extents = Vector2( 19.9999, 18.5 )
+extents = Vector2( 20.5, 18.5 )
 
 [sub_resource type="RectangleShape2D" id=8]
 extents = Vector2( 20.2342, 18.5 )
 
 [sub_resource type="RectangleShape2D" id=5]
-extents = Vector2( 20, 19.5 )
+extents = Vector2( 20, 20 )
 
 [sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 19.875, 20.25 )
 
 [sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 19.875, 18.125 )
+extents = Vector2( 19.5, 18.125 )
 
 [sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 19, 77.5 )
+extents = Vector2( 19, 75 )
 
 [sub_resource type="RectangleShape2D" id=9]
 extents = Vector2( 97.5, 19.5 )
 
 [sub_resource type="RectangleShape2D" id=11]
-extents = Vector2( 48, 239 )
+extents = Vector2( 49.5, 353.5 )
+
+[sub_resource type="RectangleShape2D" id=13]
+extents = Vector2( 86, 3.5 )
 
 [sub_resource type="RectangleShape2D" id=10]
 extents = Vector2( 20, 221 )
@@ -40,6 +49,8 @@ position = Vector2( 27, 403 )
 
 [node name="Camera2D" type="Camera2D" parent="KinematicBody2D"]
 current = true
+limit_right = 985
+editor_draw_limits = true
 
 [node name="Objectes" type="Node2D" parent="."]
 
@@ -47,25 +58,21 @@ current = true
 
 [node name="Cubo5" type="StaticBody2D" parent="Objectes/Cubos"]
 
-[node name="ColorRect" type="ColorRect" parent="Objectes/Cubos/Cubo5"]
-margin_left = 612.0
-margin_top = 335.0
-margin_right = 652.0
-margin_bottom = 372.0
-color = Color( 0.588235, 0.588235, 0.588235, 1 )
+[node name="ColorRect" type="Sprite" parent="Objectes/Cubos/Cubo5"]
+position = Vector2( 631.5, 353.5 )
+scale = Vector2( 2.5625, 2.3125 )
+texture = ExtResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Objectes/Cubos/Cubo5"]
-position = Vector2( 632, 353.5 )
+position = Vector2( 631.5, 353.5 )
 shape = SubResource( 7 )
 
 [node name="Cubo4" type="StaticBody2D" parent="Objectes/Cubos"]
 
-[node name="ColorRect" type="ColorRect" parent="Objectes/Cubos/Cubo4"]
-margin_left = 707.0
-margin_top = 323.0
-margin_right = 747.0
-margin_bottom = 360.0
-color = Color( 0.588235, 0.588235, 0.588235, 1 )
+[node name="ColorRect" type="Sprite" parent="Objectes/Cubos/Cubo4"]
+position = Vector2( 726.5, 341.5 )
+scale = Vector2( 2.5625, 2.3125 )
+texture = ExtResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Objectes/Cubos/Cubo4"]
 position = Vector2( 726.766, 341.5 )
@@ -73,25 +80,21 @@ shape = SubResource( 8 )
 
 [node name="Cubo3" type="StaticBody2D" parent="Objectes/Cubos"]
 
-[node name="ColorRect" type="ColorRect" parent="Objectes/Cubos/Cubo3"]
-margin_left = 356.0
-margin_top = 353.0
-margin_right = 396.0
-margin_bottom = 392.0
-color = Color( 0.588235, 0.588235, 0.588235, 1 )
+[node name="ColorRect" type="Sprite" parent="Objectes/Cubos/Cubo3"]
+position = Vector2( 376, 373 )
+scale = Vector2( 2.5, 2.5 )
+texture = ExtResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Objectes/Cubos/Cubo3"]
-position = Vector2( 376, 372.5 )
+position = Vector2( 376, 373 )
 shape = SubResource( 5 )
 
 [node name="Cubo2" type="StaticBody2D" parent="Objectes/Cubos"]
 
-[node name="ColorRect" type="ColorRect" parent="Objectes/Cubos/Cubo2"]
-margin_left = 257.0
-margin_top = 381.0
-margin_right = 297.0
-margin_bottom = 421.0
-color = Color( 0.588235, 0.588235, 0.588235, 1 )
+[node name="ColorRect" type="Sprite" parent="Objectes/Cubos/Cubo2"]
+position = Vector2( 277, 401.5 )
+scale = Vector2( 2.5, 2.5625 )
+texture = ExtResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Objectes/Cubos/Cubo2"]
 position = Vector2( 277, 401.5 )
@@ -99,15 +102,13 @@ shape = SubResource( 6 )
 
 [node name="Cubo" type="StaticBody2D" parent="Objectes/Cubos"]
 
-[node name="ColorRect" type="ColorRect" parent="Objectes/Cubos/Cubo"]
-margin_left = 171.0
-margin_top = 407.0
-margin_right = 211.0
-margin_bottom = 444.0
-color = Color( 0.588235, 0.588235, 0.588235, 1 )
+[node name="ColorRect" type="Sprite" parent="Objectes/Cubos/Cubo"]
+position = Vector2( 191.5, 425.5 )
+scale = Vector2( 2.4375, 2.3125 )
+texture = ExtResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Objectes/Cubos/Cubo"]
-position = Vector2( 191.125, 425.125 )
+position = Vector2( 191.5, 425.125 )
 shape = SubResource( 4 )
 
 [node name="Terres" type="Node2D" parent="Objectes"]
@@ -119,25 +120,21 @@ position = Vector2( 304, 474 )
 
 [node name="Columna" type="StaticBody2D" parent="Objectes/Columnes"]
 
-[node name="ColorRect" type="ColorRect" parent="Objectes/Columnes/Columna"]
-margin_left = 473.0
-margin_top = 290.0
-margin_right = 513.0
-margin_bottom = 445.0
-color = Color( 0.545098, 0.545098, 0.545098, 1 )
+[node name="ColorRect" type="Sprite" parent="Objectes/Columnes/Columna"]
+position = Vector2( 492.75, 379.5 )
+scale = Vector2( 2.28125, 11.1875 )
+texture = ExtResource( 6 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Objectes/Columnes/Columna"]
-position = Vector2( 493, 367.5 )
+position = Vector2( 493, 365 )
 shape = SubResource( 3 )
 
 [node name="Columna2" type="StaticBody2D" parent="Objectes/Columnes"]
 
-[node name="ColorRect" type="ColorRect" parent="Objectes/Columnes/Columna2"]
-margin_left = 788.0
-margin_top = 262.0
-margin_right = 983.0
-margin_bottom = 301.0
-color = Color( 0.545098, 0.545098, 0.545098, 1 )
+[node name="ColorRect" type="Sprite" parent="Objectes/Columnes/Columna2"]
+position = Vector2( 886.25, 281.75 )
+scale = Vector2( 12.2188, 2.40625 )
+texture = ExtResource( 7 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Objectes/Columnes/Columna2"]
 position = Vector2( 885.5, 281.5 )
@@ -145,16 +142,27 @@ shape = SubResource( 9 )
 
 [node name="Columna3" type="StaticBody2D" parent="Objectes/Columnes"]
 
-[node name="ColorRect" type="ColorRect" parent="Objectes/Columnes/Columna3"]
-margin_left = -95.0
-margin_top = 26.0
-margin_right = 1.0
-margin_bottom = 506.0
-color = Color( 0.545098, 0.545098, 0.545098, 1 )
+[node name="ColorRect" type="Sprite" parent="Objectes/Columnes/Columna3"]
+position = Vector2( -48.5, 149 )
+scale = Vector2( 6.1875, 44.25 )
+texture = ExtResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Objectes/Columnes/Columna3"]
-position = Vector2( -47, 267 )
+position = Vector2( -50.5, 149.5 )
 shape = SubResource( 11 )
+
+[node name="Obstacles" type="Node2D" parent="Objectes"]
+
+[node name="Obstacle1" type="Area2D" parent="Objectes/Obstacles"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Objectes/Obstacles/Obstacle1"]
+position = Vector2( 386, 439 )
+shape = SubResource( 13 )
+
+[node name="ColorRect" type="Sprite" parent="Objectes/Obstacles/Obstacle1"]
+position = Vector2( 386.5, 436 )
+scale = Vector2( 1.35156, 0.125 )
+texture = ExtResource( 8 )
 
 [node name="Final" type="Area2D" parent="."]
 
@@ -168,5 +176,6 @@ shape = SubResource( 10 )
 position = Vector2( 495.75, 544 )
 shape = SubResource( 12 )
 
+[connection signal="body_entered" from="Objectes/Obstacles/Obstacle1" to="KinematicBody2D" method="_on_Obstacle1_body_entered"]
 [connection signal="body_entered" from="Final" to="KinematicBody2D" method="_on_Final_body_entered"]
 [connection signal="body_entered" from="Limit" to="KinematicBody2D" method="_on_Limit_body_entered"]
