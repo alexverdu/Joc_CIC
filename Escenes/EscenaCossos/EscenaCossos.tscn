@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://Escenes/EscenaCossos/CosGodot.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Escenes/EscenaCossos/Terra.tscn" type="PackedScene" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://Imatges/Tiles/tile_0021.png" type="Texture" id=6]
 [ext_resource path="res://Imatges/Tiles/tile_0020.png" type="Texture" id=7]
 [ext_resource path="res://Imatges/Tiles/spikes.png" type="Texture" id=8]
+[ext_resource path="res://Imatges/Backgrounds/uso-del-fondo-del-juego-del-bosque-o-73562942.jpg" type="Texture" id=9]
 
 [sub_resource type="RectangleShape2D" id=7]
 extents = Vector2( 20.5, 18.5 )
@@ -43,6 +44,14 @@ extents = Vector2( 20, 221 )
 extents = Vector2( 494.25, 10 )
 
 [node name="Escena1" type="Node2D"]
+position = Vector2( 2, 96 )
+
+[node name="Background" type="Node2D" parent="."]
+
+[node name="Sprite" type="Sprite" parent="Background"]
+position = Vector2( 489, 212.5 )
+scale = Vector2( 0.78625, 1.07875 )
+texture = ExtResource( 9 )
 
 [node name="KinematicBody2D" parent="." instance=ExtResource( 1 )]
 position = Vector2( 27, 403 )

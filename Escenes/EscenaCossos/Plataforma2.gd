@@ -1,4 +1,4 @@
-extends Area2D
+extends StaticBody2D
 
 
 # Declare member variables here. Examples:
@@ -17,4 +17,4 @@ func _ready():
 
 
 func _on_Switch_body_entered(body):
-	position = Vector2(270,340)
+	global_position = Vector2(270,360)

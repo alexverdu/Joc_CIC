@@ -46,11 +46,20 @@ func _on_Limit_body_entered(body):
 
 func _on_IniciEscena2_body_entered(body):
 	get_tree().change_scene("res://Escenes/EscenaCossos/EscenaCossos.tscn")
-
+	global_position = Vector2(960,260)
+	
 func _on_Obstacle1_area_entered(area):
 	position = Vector2(25,425)
 
 
 func _on_Obstacle1_body_entered(body):
 	position = Vector2(25,425)
+
+
+
+func _on_Escala_body_entered(body):
+	position =  Vector2(581,278)
+	
+
+
 
