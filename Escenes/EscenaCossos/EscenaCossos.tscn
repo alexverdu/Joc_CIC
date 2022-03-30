@@ -8,7 +8,7 @@
 [ext_resource path="res://Imatges/Tiles/tile_0021.png" type="Texture" id=6]
 [ext_resource path="res://Imatges/Tiles/tile_0020.png" type="Texture" id=7]
 [ext_resource path="res://Imatges/Tiles/spikes.png" type="Texture" id=8]
-[ext_resource path="res://Imatges/Backgrounds/uso-del-fondo-del-juego-del-bosque-o-73562942.jpg" type="Texture" id=9]
+[ext_resource path="res://Imatges/Coses varies/fondo-juego-ilustracion-montana-vector_303920-21.webp" type="Texture" id=9]
 
 [sub_resource type="RectangleShape2D" id=7]
 extents = Vector2( 20.5, 18.5 )
@@ -49,8 +49,8 @@ position = Vector2( 2, 96 )
 [node name="Background" type="Node2D" parent="."]
 
 [node name="Sprite" type="Sprite" parent="Background"]
-position = Vector2( 489, 212.5 )
-scale = Vector2( 0.78625, 1.07875 )
+position = Vector2( 256, 364 )
+scale = Vector2( 2.49201, 2.20144 )
 texture = ExtResource( 9 )
 
 [node name="KinematicBody2D" parent="." instance=ExtResource( 1 )]

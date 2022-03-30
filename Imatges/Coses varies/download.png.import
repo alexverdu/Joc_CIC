@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Bin Laden.png-c15e64d8f5518c9b3eaa650197f933d4.stex"
+path="res://.import/download.png-b974160c30610cad9355de6a81e76d3b.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Imatges/Bin Laden.png"
-dest_files=[ "res://.import/Bin Laden.png-c15e64d8f5518c9b3eaa650197f933d4.stex" ]
+source_file="res://Imatges/Coses varies/download.png"
+dest_files=[ "res://.import/download.png-b974160c30610cad9355de6a81e76d3b.stex" ]
 
 [params]
 

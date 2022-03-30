@@ -63,3 +63,7 @@ func _on_Escala_body_entered(body):
 
 
 
+
+
+func _on_Palanca_final_body_entered(body):
+	get_tree().change_scene("res://Escenes/EscenaCossos/Escena3.tscn")

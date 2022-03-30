@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/uso-del-fondo-del-juego-del-bosque-o-73562942.png-f0849e1cbcb6621c7a9a68b3474fa96c.stex"
+path="res://.import/fondo-juego-ilustracion-montana-vector_303920-21.webp-080d7537a2f6ec2f6b0acfe3dc7a789b.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Imatges/uso-del-fondo-del-juego-del-bosque-o-73562942.png"
-dest_files=[ "res://.import/uso-del-fondo-del-juego-del-bosque-o-73562942.png-f0849e1cbcb6621c7a9a68b3474fa96c.stex" ]
+source_file="res://Imatges/Coses varies/fondo-juego-ilustracion-montana-vector_303920-21.webp"
+dest_files=[ "res://.import/fondo-juego-ilustracion-montana-vector_303920-21.webp-080d7537a2f6ec2f6b0acfe3dc7a789b.stex" ]
 
 [params]
 
