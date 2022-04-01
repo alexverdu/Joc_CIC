@@ -1,0 +1,263 @@
+[gd_scene load_steps=22 format=2]
+
+[ext_resource path="res://Escenes/EscenaCossos/CosGodot.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Escenes/EscenaCossos/Terra.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Imatges/Tiles/tile_0001.png" type="Texture" id=3]
+[ext_resource path="res://Imatges/Tiles/tile_0000.png" type="Texture" id=4]
+[ext_resource path="res://Imatges/Tiles/tile_0002.png" type="Texture" id=5]
+[ext_resource path="res://Imatges/Tiles/tile_0021.png" type="Texture" id=6]
+[ext_resource path="res://Imatges/Tiles/tile_0020.png" type="Texture" id=7]
+[ext_resource path="res://Imatges/Tiles/spikes.png" type="Texture" id=8]
+[ext_resource path="res://Imatges/Coses varies/fondo-juego-ilustracion-montana-vector_303920-21.webp" type="Texture" id=9]
+
+[sub_resource type="GDScript" id=14]
+script/source = "extends KinematicBody2D
+
+var velocitat_base = 200
+var velocitat = Vector2.ZERO
+var gravetat = Vector2.DOWN * 1200
+var salt = Vector2.UP * 400
+
+func _physics_process(delta):
+	velocitat.x = 0
+	if Input.is_action_pressed(\"mou_dreta\"):
+		velocitat += Vector2.RIGHT * velocitat_base
+	if Input.is_action_pressed(\"mou_esquerra\"):
+		velocitat += Vector2.LEFT * velocitat_base
+	if Input.is_action_just_pressed(\"mou_adalt\") and is_on_floor():
+		velocitat += salt
+#	if Input.is_action_just_pressed(\"mou_abaix\"):
+#		velocitat += Vector2.DOWN * velocitat_base
+
+	velocitat += gravetat * delta
+	velocitat = move_and_slide((velocitat), Vector2.UP)
+	
+	anima(velocitat)
+	
+func anima(velocitat: Vector2):
+	var animacio = $Sprite
+	if velocitat.x > 0.5:
+		animacio.flip_h  = false
+		animacio.play(\"camina\")
+	elif velocitat.x < 0.5:
+		animacio.flip_h = true
+		animacio.play(\"camina\")
+	
+	if velocitat.y < -1:
+		animacio.play(\"salta\")
+	elif abs(velocitat.x) < 0.1:
+		animacio.play(\"default\")
+			
+
+func _on_Final_body_entered(body):
+	get_tree().change_scene(\"res://Escenes/EscenaCossos/Escena2.tscn\")
+
+
+func _on_Limit_body_entered(body):
+	position = Vector2(25, 425)
+
+
+func _on_IniciEscena2_body_entered(body):
+	get_tree().change_scene(\"res://Escenes/EscenaCossos/EscenaCossos.tscn\")
+	global_position = Vector2(960,260)
+	
+func _on_Obstacle1_area_entered(area):
+	position = Vector2(25,425)
+
+
+func _on_Obstacle1_body_entered(body):
+	position = Vector2(25,425)
+
+
+
+func _on_Escala_body_entered(body):
+	position =  Vector2(581,278)
+	
+
+
+
+
+
+func _on_Palanca_final_body_entered(body):
+	get_tree().change_scene(\"res://Escenes/EscenaCossos/Escena3.tscn\")
+"
+
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 20.5, 18.5 )
+
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 20.2342, 18.5 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 20, 20 )
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 19.875, 20.25 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 19.5, 18.125 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 19, 75 )
+
+[sub_resource type="RectangleShape2D" id=9]
+extents = Vector2( 97.5, 19.5 )
+
+[sub_resource type="RectangleShape2D" id=11]
+extents = Vector2( 49.5, 353.5 )
+
+[sub_resource type="RectangleShape2D" id=13]
+extents = Vector2( 86, 3.5 )
+
+[sub_resource type="RectangleShape2D" id=10]
+extents = Vector2( 20, 221 )
+
+[sub_resource type="RectangleShape2D" id=12]
+extents = Vector2( 494.25, 10 )
+
+[node name="Escena1" type="Node2D"]
+position = Vector2( 2, 96 )
+
+[node name="Background" type="Node2D" parent="."]
+
+[node name="Sprite" type="Sprite" parent="Background"]
+position = Vector2( 256, 364 )
+scale = Vector2( 2.49201, 2.20144 )
+texture = ExtResource( 9 )
+
+[node name="KinematicBody2D" parent="." instance=ExtResource( 1 )]
+position = Vector2( 963, 221 )
+script = SubResource( 14 )
+
+[node name="Camera2D" type="Camera2D" parent="KinematicBody2D"]
+current = true
+limit_right = 985
+editor_draw_limits = true
+
+[node name="Objectes" type="Node2D" parent="."]
+
+[node name="Cubos" type="Node2D" parent="Objectes"]
+
+[node name="Cubo5" type="StaticBody2D" parent="Objectes/Cubos"]
+
+[node name="ColorRect" type="Sprite" parent="Objectes/Cubos/Cubo5"]
+position = Vector2( 631.5, 353.5 )
+scale = Vector2( 2.5625, 2.3125 )
+texture = ExtResource( 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Objectes/Cubos/Cubo5"]
+position = Vector2( 631.5, 353.5 )
+shape = SubResource( 7 )
+
+[node name="Cubo4" type="StaticBody2D" parent="Objectes/Cubos"]
+
+[node name="ColorRect" type="Sprite" parent="Objectes/Cubos/Cubo4"]
+position = Vector2( 726.5, 341.5 )
+scale = Vector2( 2.5625, 2.3125 )
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Objectes/Cubos/Cubo4"]
+position = Vector2( 726.766, 341.5 )
+shape = SubResource( 8 )
+
+[node name="Cubo3" type="StaticBody2D" parent="Objectes/Cubos"]
+
+[node name="ColorRect" type="Sprite" parent="Objectes/Cubos/Cubo3"]
+position = Vector2( 376, 373 )
+scale = Vector2( 2.5, 2.5 )
+texture = ExtResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Objectes/Cubos/Cubo3"]
+position = Vector2( 376, 373 )
+shape = SubResource( 5 )
+
+[node name="Cubo2" type="StaticBody2D" parent="Objectes/Cubos"]
+
+[node name="ColorRect" type="Sprite" parent="Objectes/Cubos/Cubo2"]
+position = Vector2( 277, 401.5 )
+scale = Vector2( 2.5, 2.5625 )
+texture = ExtResource( 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Objectes/Cubos/Cubo2"]
+position = Vector2( 277, 401.5 )
+shape = SubResource( 6 )
+
+[node name="Cubo" type="StaticBody2D" parent="Objectes/Cubos"]
+
+[node name="ColorRect" type="Sprite" parent="Objectes/Cubos/Cubo"]
+position = Vector2( 191.5, 425.5 )
+scale = Vector2( 2.4375, 2.3125 )
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Objectes/Cubos/Cubo"]
+position = Vector2( 191.5, 425.125 )
+shape = SubResource( 4 )
+
+[node name="Terres" type="Node2D" parent="Objectes"]
+
+[node name="Terra" parent="Objectes/Terres" instance=ExtResource( 2 )]
+position = Vector2( 304, 474 )
+
+[node name="Columnes" type="Node2D" parent="Objectes"]
+
+[node name="Columna" type="StaticBody2D" parent="Objectes/Columnes"]
+
+[node name="ColorRect" type="Sprite" parent="Objectes/Columnes/Columna"]
+position = Vector2( 492.75, 379.5 )
+scale = Vector2( 2.28125, 11.1875 )
+texture = ExtResource( 6 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Objectes/Columnes/Columna"]
+position = Vector2( 493, 365 )
+shape = SubResource( 3 )
+
+[node name="Columna2" type="StaticBody2D" parent="Objectes/Columnes"]
+
+[node name="ColorRect" type="Sprite" parent="Objectes/Columnes/Columna2"]
+position = Vector2( 886.25, 281.75 )
+scale = Vector2( 12.2188, 2.40625 )
+texture = ExtResource( 7 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Objectes/Columnes/Columna2"]
+position = Vector2( 885.5, 281.5 )
+shape = SubResource( 9 )
+
+[node name="Columna3" type="StaticBody2D" parent="Objectes/Columnes"]
+
+[node name="ColorRect" type="Sprite" parent="Objectes/Columnes/Columna3"]
+position = Vector2( -48.5, 149 )
+scale = Vector2( 6.1875, 44.25 )
+texture = ExtResource( 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Objectes/Columnes/Columna3"]
+position = Vector2( -50.5, 149.5 )
+shape = SubResource( 11 )
+
+[node name="Obstacles" type="Node2D" parent="Objectes"]
+
+[node name="Obstacle1" type="Area2D" parent="Objectes/Obstacles"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Objectes/Obstacles/Obstacle1"]
+position = Vector2( 386, 439 )
+shape = SubResource( 13 )
+
+[node name="ColorRect" type="Sprite" parent="Objectes/Obstacles/Obstacle1"]
+position = Vector2( 386.5, 436 )
+scale = Vector2( 1.35156, 0.125 )
+texture = ExtResource( 8 )
+
+[node name="Final" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Final"]
+position = Vector2( 1005, 309 )
+shape = SubResource( 10 )
+
+[node name="Limit" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Limit"]
+position = Vector2( 495.75, 544 )
+shape = SubResource( 12 )
+
+[connection signal="body_entered" from="Objectes/Obstacles/Obstacle1" to="KinematicBody2D" method="_on_Obstacle1_body_entered"]
+[connection signal="body_entered" from="Final" to="KinematicBody2D" method="_on_Final_body_entered"]
+[connection signal="body_entered" from="Limit" to="KinematicBody2D" method="_on_Limit_body_entered"]
